@@ -1,0 +1,11 @@
+Project/[Ll]ibrary/
+Project/[Tt]emp/
+Project/[Oo]bj/
+Project/[Ll]ogs/
+Project/[Uu]serSettings/
+*.csproj
+*.sln
+.vs/
+*.log
+COMPILAR-Y-VERIFICAR.flag
+Build/*_BackUpThisFolder_ButDontShipItWithYourGame/
