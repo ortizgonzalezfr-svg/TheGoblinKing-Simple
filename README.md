@@ -1,35 +1,31 @@
 ﻿# El Cementerio
 
-## Objetivo y plataforma
-Juego 2D para **Windows de 64 bits**. El objetivo es derrotar a cuatro enemigos sin perder toda la vida. Se eligió PC para utilizar teclado/mouse y ejecutar el juego localmente, sin servidor.
+## Objetivo
+Derrotar a cuatro enemigos en un nivel 2D. Se gana al completar las cuatro bajas y se pierde al quedarse sin vida.
 
-## Configuración
-Unity **6000.6.7f1**, pipeline **URP con Renderer 2D**, calidad Medium, sprites con filtro Point, VSync y sin HDR ni antialiasing. Dependencias: URP 17.6.0, Input System 1.19.0, Sprite/Tilemap 2D e IMGUI, declaradas en `Project/Packages/manifest.json`.
+## Plataforma
+PC Windows de 64 bits, elegida para utilizar teclado/mouse y ejecutar el juego localmente.
 
-## Cómo ejecutar
-- **Windows:** abrir `Build/ElCementerioSimple.exe` y conservar los demás archivos de Build.
-- **Unity:** añadir la carpeta `Project` desde Unity Hub, abrir `Assets/Scenes/Cementerio.unity` y pulsar Play.
+## Configuración clave
+Unity 6000.6.7f1, pipeline URP con Renderer 2D y calidad Medium. Los recursos se organizan en `Assets/`: Scripts, Scenes, Prefabs, Art, Audio y Settings.
+
+El juego gestiona inicio, partida, fin y reintento mediante estados. Utiliza prefabs reutilizables y parámetros configurables en el Inspector. Rigidbody2D, colliders y gravedad resuelven el salto y las colisiones. La música y los efectos de salto y curación usan fuentes de audio con volúmenes separados.
+
+## Instrucciones de ejecución
+- Windows: abrir `Build/ElCementerioSimple.exe`, conservando sus archivos acompañantes.
+- Unity: abrir `Project`, cargar `Assets/Scenes/Cementerio.unity` y pulsar Play.
 
 ## Controles
-A/D o flechas: mover. W/Espacio: saltar. J o clic izquierdo: pegar. E: recoger un corazón y recuperar 2 puntos de vida. Esc: pausa. R: reintentar al terminar. F11: pantalla completa en el ejecutable.
+A/D o flechas: mover. W/Espacio: saltar. J o clic izquierdo: pegar. E: recoger un corazón y recuperar vida. Esc: pausa. R: reintentar al terminar.
 
-## Funcionamiento
-El ciclo de juego incluye inicio, partida, pausa, victoria, derrota y reintento. La cuarta baja permite ganar; quedarse sin vida provoca la derrota.
-
-Los prefabs reutilizan jugador, enemigo y corazón. El suelo usa Tilemap; Rigidbody2D, colliders, gravedad y un material sin rebote permiten saltar y detectar colisiones. La vida, velocidades y tiempos son configurables en el Inspector.
-
-La música en bucle y los efectos de salto, golpe, daño, curación y menús usan dos fuentes de audio, con volúmenes separados ajustables en pausa.
+## Dependencias
+Unity, Universal Render Pipeline, Input System y herramientas 2D de Sprite/Tilemap. Los paquetes están declarados en `Project/Packages/manifest.json`.
 
 ## Riesgos y mitigaciones
 - Importación inicial lenta: esperar a que Unity termine de instalar los paquetes.
-- Diferencias entre editor y ejecutable: revisar ambos.
-- Pérdida de avances: utilizar Git y respaldos.
-- Curación accidental: requiere E y no consume corazones con vida completa.
+- Diferencias entre editor y ejecutable: comprobar ambos antes de entregar.
 
-## Integrantes y roles
-- **Francisco Ortiz:** programación y ajuste de las acciones del personaje.
-- **Agustín Feijoo:** recursos visuales, incorporación de imágenes y pruebas para detectar errores.
-- **Ambos:** selección, incorporación y ajustes del sonido.
-
-## Repositorio
-Pendiente de añadir el enlace de GitHub. La entrega debe incluir `Project/`, `Build/` y este README, con los commits reales de ambos integrantes.
+## Roles de la dupla
+- Francisco Ortiz: programación y ajuste de las acciones del personaje.
+- Agustín Feijoo: recursos visuales, incorporación de imágenes y pruebas para detectar errores.
+- Ambos: selección, incorporación y ajustes del sonido.
